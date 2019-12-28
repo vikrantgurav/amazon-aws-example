@@ -142,6 +142,7 @@ public class AmazonController {
 		
 		List<MessageResponse> messageResponses = null;
 		ObjectMapper objectMapper = new ObjectMapper();
+		logger.info("Queue url: {}",queueUrl);
 		List<Message> messages = sqs.receiveMessage(queueUrl).getMessages();
 		
 		if(messages!=null) {
